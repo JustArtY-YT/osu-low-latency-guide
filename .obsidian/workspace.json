@@ -11,12 +11,14 @@
             "id": "72c6661b2a22a718",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "boot_uefi.png"
+                "file": "Languages/Russian.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "boot_uefi"
+              "icon": "lucide-file",
+              "title": "Russian"
             }
           }
         ]
@@ -177,8 +179,9 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "13214a5b539e30ca",
+  "active": "72c6661b2a22a718",
   "lastOpenFiles": [
+    "boot_uefi.png",
     "boot_bios.png",
     "Languages/Russian.md",
     "Pasted image 20250304220753.png",
@@ -190,7 +193,6 @@
     "Pasted image 20250304215858.png",
     "Pasted image 20250304215813.png",
     "Pasted image 20250304215735.png",
-    "Pasted image 20250304215533.png",
     "Languages/Russian.md~",
     "Languages/English.md",
     "README.md",
