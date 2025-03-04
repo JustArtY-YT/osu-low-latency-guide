@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "72c6661b2a22a718",
+            "id": "75dd9b971597b088",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -19,6 +19,18 @@
               },
               "icon": "lucide-file",
               "title": "Russian"
+            }
+          },
+          {
+            "id": "72c6661b2a22a718",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "photos/hostname.png"
+              },
+              "icon": "lucide-image",
+              "title": "hostname"
             }
           }
         ]
@@ -179,8 +191,12 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "72c6661b2a22a718",
+  "active": "75dd9b971597b088",
   "lastOpenFiles": [
+    "photos/Pasted image 20250304224042.png",
+    "photos/hostname.png",
+    "Languages/Russian.md",
+    "photos/ping.png",
     "Pasted image 20250304223657.png",
     "photos/disk_result.png",
     "photos/compression.png",
@@ -189,10 +205,6 @@
     "photos/sel_disk.png",
     "photos/best-effort.png",
     "photos/partitioning.png",
-    "photos/mirror_result.png",
-    "photos/regions.png",
-    "photos/mirror_region.png",
-    "Languages/Russian.md",
     "photos",
     "Languages/Russian.md~",
     "Languages/English.md",
