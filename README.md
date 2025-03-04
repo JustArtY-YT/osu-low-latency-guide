@@ -15,4 +15,5 @@ French by ???
 
 Spanish by ???
 
-
+> [!NOTE]
+> If you're a translator, you allowed to self-promote :D
