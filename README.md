@@ -2,6 +2,17 @@
 Updated Vudek's osu! low-latency guide
 
 Languages:
+
 [English](Languages/English.md)
-[Russian](Languages/Russian.md)
+
+[Russian](Languages/Russian.md) by [kartavkun](https://kartavkun.github.io/site/)
+
+Ukranian by ???
+
+German by ???
+
+French by ???
+
+Spanish by ???
+
 
