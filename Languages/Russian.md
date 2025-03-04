@@ -13,9 +13,9 @@
 # 1 этап: Установка
 ## 1.1 Подготовка
 После загрузки у вас должно быть следующим образом:
-![[Pasted image 20250304121113.png]]
+![Arch_start.png](../photos/arch_start.png)
 Сначала проверим интернет соединение командой `ping`
-![[Pasted image 20250304121328.png]]
+![ping.png](../photos/ping.png)
 Если запросы идут, значит интернет есть.
 
 Чтоб закончить нажмите Ctrl+C
@@ -28,11 +28,11 @@
 ## 1.2 Установка
 После того, как мы убедились в подключении к сети, запускаем `archinstall`
 
-![[Pasted image 20250304121959.png]]
+![archinstall.png](../photos/archinstall.png)
 
 После загрузки у вас будет такое меню:
 
-![[Pasted image 20250304214950.png]]
+![menu.png](../photos/menu.png)
 # 1.2.1 Зеркала
 Пропускаем первые два пункта, начинаем с `Mirrors`
 
@@ -40,58 +40,58 @@
 
 После открытия меню `Mirrors` будет следующее:
 
-![[Pasted image 20250304215114.png]]
+![mirror_region.png](../photos/mirror_region.png)
 
 Выбираем `Mirror region`
 
 В меню выбирайте свою страну. Чтоб легче найти свою страну, нажмите `/` и пишите свою страну на английском, потом нажимаете `Enter`
 
-![[Pasted image 20250304215149.png]]
+![regions.png](../photos/regions.png)
 
 Должно быть так (В моём случае `Russia`):
 
-![[Pasted image 20250304215357.png]]
+![mirror_result.png](../photos/mirror_result.png)
 ## 1.2.2 Разметка дисков
 Затем `Disk configuration`:
 
-![[Pasted image 20250304215533.png]]
+![partitioning.png](../photos/partitioning.png)
 Выбираем `Partitioning`
 
-![[Pasted image 20250304215735.png]]
+![best-effort.png](../photos/best-effort.png)
 
 Выбираем `Use a best-effort default partiotion layout`
 
-![[Pasted image 20250304215813.png]]
+![sel_disk.png](../photos/sel_disk.png)
 
 Так как я на виртуалке, тут один диск, а вы должны выбрать свой нужный
 
 Выбираем файловую систему:
 
-![[Pasted image 20250304215858.png]]
+![btrfs.png](../photos/btrfs.png)
 
 Выбираем `btrfs` как более быструю файловую систему
 
-![[Pasted image 20250304220053.png]]
+![subvolumes.png](../photos/subvolumes.png)
 
 Выбираем `No`
 
-![[Pasted image 20250304220117.png]]
+![compression.png](../photos/compression.png)
 
 Выбираем `Use compression`
 
 Должно быть вот так:
 
-![[Pasted image 20250304220144.png]]
+![disk_result.png](../photos/disk_result.png)
 ## 1.2.3 Шифрование диска
 Пропускаем пункт `Disk encryption`, но можете сделать.
 ## 1.2.4 Файл подкачки
 Убедимся, что `swap` включён:
-![[Pasted image 20250304220232.png]]
+![swap.png](../photos/swap.png)
 ## 1.2.5 Загрузчик
 `Bootloader` выбираем Grub
-![[Pasted image 20250304220256.png]]
+![bootloader.png](../photos/bootloader.png)
 ## 1.2.6 Унифицированные образы ядра
 Оставляем `Unified kernel images` по дефолту (Disabled)
-![[Pasted image 20250304220753.png]]
+![UKI.png](../photos/UKI.png)
 ## 1.2.7 
 # 2. Загрузка в установленную ОС
