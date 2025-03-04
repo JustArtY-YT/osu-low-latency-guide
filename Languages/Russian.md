@@ -313,7 +313,9 @@ nano .config/i3/config
 
 Для выхода из `nano` нажмите `Ctrl+X`
 
-### 2.5.? Допишу позже...
+### 2.5.? Misc 
+> [!NOTE]
+> По сути, тут чисто индивидуальщина, типа установка обоев, положение бара, фикс трея и прочее. Не обязательная вещь (кроме последнего разве что), и всё написано в конфиг файле. Думаю, вы не глупые, разберётесь :)))
 
 ## 2.6 Горячие клавиши
 Шпаргалка для новичков i3-wm:
@@ -341,3 +343,47 @@ nano .config/i3/config
 
 
 > Win+Shift+R - Перезагрузка конфига (для изменений в конфигурационном файле)
+
+# 3 Установка osu!stable
+Вы можете открыть браузер, чтоб скопировать ссылку для запуска скрипта, который установит игру, вместе с драйверами и другими зависимостями. В терминал нужно вписать следующую команду:
+```bash
+curl -fsSL https://raw.githubusercontent.com/kartavkun/arch-osu-wine/main/setup.sh | sh
+```
+
+> [!TODO]
+> Скриншоты и прочее сделаю позже
+
+Готово!
+
+# 4 Запуск osu!stable
+Для запуска osu!, пропишите в терминале команду для корректного первого запуска:
+```
+.local/bin/osu
+```
+После того как у вас запуститься игра, можете выходить и отныне запускать игру через лаунчер приложений. 
+
+## 4.1 Решение проблем
+> [!TODO]
+> Если нет звука или он "пердит", то как это решить есть здесь: https://github.com/kartavkun/arch-osu-wine?tab=readme-ov-file#troubleshooting .
+> Если не работает OpenTabletDriver, то надо сделать лог аут (кнопка справа сверху).
+> На браузерах, кроме Фаерфокса и его форках (Шарю только за Librewolf) есть проблема, что через браузер открыть файлы для карт и скинов не всегда получается, так что открывать их надо через файловый менеджер.
+> Остальные проблемы пока не знаю, ибо других проблем не встречал прям критичных. 
+> Обо всём напишу позже.
+
+# 5 Дополнения
+Если вы хотите использовать Дискорд для трансляций со звуком, используйте [Vesktop](https://github.com/Vencord/Vesktop) как клиент с Венкорд, лучше поддерживается на Линукс, чем официальный клиент:
+```bash
+yay -S vesktop-bin
+```
+Если нужно установить osu тренер (для создания дифф с ускорением, сменой AR, OD, CS, HP), надо написать следующее:
+```
+echo "[home_hwsnemo_packaged-wine-osu_Arch]
+Server = https://download.opensuse.org/repositories/home:/hwsnemo:/packaged-wine-osu/Arch/$arch" | sudo tee -a /etc/pacman.conf
+sudo key=$(curl -fsSL https://download.opensuse.org/repositories/home:hwsnemo:packaged-wine-osu/Arch/$(uname -m)/home_hwsnemo_packaged-wine-osu_Arch.key)
+fingerprint=$(gpg --quiet --with-colons --import-options show-only --import --fingerprint <<< "${key}" | awk -F: '$1 == "fpr" { print $10 }')
+sudo pacman-key --init
+sudo pacman-key --add - <<< "${key}"
+sudo pacman-key --lsign-key "${fingerprint}"
+sudo pacman -Sy home_hwsnemo_packaged-wine-osu_Arch/cosu-trainer
+```
+Если вы из России, для Ютуба и Дискорда нужно установить zapret (как и на винде). Как установить и т.д. найдёте в моём репозитории - https://github.com/kartavkun/zapret-discord-youtube
