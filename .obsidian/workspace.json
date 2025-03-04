@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "Languages/Russian.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "Russian"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "Languages/Russian.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for README"
+              "title": "Backlinks for Russian"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "Languages/Russian.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from README"
+              "title": "Outgoing links from Russian"
             }
           },
           {
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md",
+                "file": "Languages/Russian.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of README"
+              "title": "Outline of Russian"
             }
           },
           {
@@ -179,13 +179,19 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "59d0786042344383",
+  "active": "72c6661b2a22a718",
   "lastOpenFiles": [
-    "README.md~",
+    "Pasted image 20250304121959.png",
+    "Languages/Russian.md~",
+    "Pasted image 20250304121328.png",
+    "Pasted image 20250304121113.png",
+    "Pasted image 20250304121027.png",
+    "Pasted image 20250304121018.png",
     "Languages/English.md",
     "Languages/Russian.md",
-    "Languages/English language.md",
     "README.md",
+    "README.md~",
+    "Languages/English language.md",
     "Languages/Русский язык.md",
     "Languages"
   ]
