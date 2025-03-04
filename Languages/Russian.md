@@ -13,8 +13,11 @@
 # 1 этап: Установка
 ## 1.1 Подготовка
 После загрузки у вас должно быть следующим образом:
-![Arch_start.png](../photos/arch_start.png)
+
+![Arch_start.png](../photos/Arch_start.png)
+
 Сначала проверим интернет соединение командой `ping`
+
 ![ping.png](../photos/ping.png)
 Если запросы идут, значит интернет есть.
 
@@ -55,6 +58,7 @@
 Затем `Disk configuration`:
 
 ![partitioning.png](../photos/partitioning.png)
+
 Выбираем `Partitioning`
 
 ![best-effort.png](../photos/best-effort.png)
@@ -94,8 +98,11 @@
 Оставляем `Unified kernel images` по дефолту (Disabled)
 ![UKI.png](../photos/UKI.png)
 ## 1.2.7 Хостнейм
-Можете оставить по дефолту, либо написать свой. В терминале будет вот так: `username@hostname $`
+Можете оставить по дефолту, либо написать свой. В терминале будет вот так: 
+
+`username@hostname $`
 ![hostname.png](../photos/hostname.png)
 ## 1.2.8 Пароль рута
+Ставьте любой, хоть `1`, но лучше надёжнее
 ![](../photos/Pasted%20image%2020250304224042.png)
 # 2. Загрузка в установленную ОС
