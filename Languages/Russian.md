@@ -7,7 +7,7 @@
 После загрузки на флешку у вас будет один из вариантов экрана:
 
 ![boot_bios.png](../photos/boot_bios.png)
-![[boot_uefi.png]]
+![boot_uefi.png](../photos/boot_uefi.png)
 
 Выбирайте первый пункт
 # 1 этап: Установка
