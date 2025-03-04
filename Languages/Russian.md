@@ -271,7 +271,7 @@
 curl -fsSL https://shorturl.at/MRENP | sh
 ```
 
-> [NOTE]
+> [!NOTE]
 > Не переживайте, я сократил ссылку, чтоб не пришлось долго и скрупулёзно писать долгую ссылку для запуска скрипта из Github.
 > Вот репозиторий с настройками - https://github.com/kartavkun/i3-dotfiles-minimal
 
