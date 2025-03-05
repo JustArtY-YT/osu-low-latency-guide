@@ -476,6 +476,3 @@ yay -S osu-lazer-bin
 ```
 ## 5.4 zapret (только для жителей России)
 Если вы из России, для Ютуба и Дискорда нужно установить zapret (как и на винде). Как установить и т.д. найдёте в моём репозитории - https://github.com/kartavkun/zapret-discord-youtube
-=======
-Если вы из России, для Ютуба и Дискорда нужно установить zapret (как и на винде). Как установить и т.д. найдёте в моём репозитории - https://github.com/kartavkun/zapret-discord-youtube
->>>>>>> origin/main
