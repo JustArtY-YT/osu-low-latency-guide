@@ -498,6 +498,8 @@ curl -fsSL https://raw.githubusercontent.com/kartavkun/arch-osu-wine/main/setup.
 
 ![](../photos/Pasted%20image%2020250305112824.png)
 
+Помимо самой игры будут установлены OpenTabletDriver, настройки звука с меньшей задержкой, файлы для работы Wootility, Drunkdeer-Antler и веб-драйвера Sayo-device'а.
+
 Готово!
 
 # 4 Запуск osu!stable
