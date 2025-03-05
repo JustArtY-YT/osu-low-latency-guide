@@ -427,6 +427,8 @@ sudo pacman -S feh
 curl -fsSL https://raw.githubusercontent.com/kartavkun/arch-osu-wine/main/setup.sh | sh
 ```
 
+Установка пройдёт полностью автоматически. Если вас просят ввести пароль, вводите и ждите конца установки, пока не появится данное сообщение:
+
 ![](../photos/Pasted%20image%2020250305112824.png)
 
 Готово!
