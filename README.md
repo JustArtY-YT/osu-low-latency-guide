@@ -4,6 +4,7 @@ Updated Vudek's osu! low-latency guide
 Scripts, that used in guide:
 
 [i3-starter-pack](https://github.com/kartavkun/i3-dotfiles-minimal)
+
 [osu!stable installer with features](https://github.com/kartavkun/arch-osu-wine)
 
 Languages:
