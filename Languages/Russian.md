@@ -529,6 +529,7 @@ yay -S vesktop-bin
 ## 5.2 osu! trainer
 Если нужно установить osu тренер (для создания дифф с ускорением, сменой AR, OD, CS, HP), надо написать следующее:
 ```
+arch=$arch
 echo "[home_hwsnemo_packaged-wine-osu_Arch]
 Server = https://download.opensuse.org/repositories/home:/hwsnemo:/packaged-wine-osu/Arch/$arch" | sudo tee -a /etc/pacman.conf
 key=$(curl -fsSL https://download.opensuse.org/repositories/home:hwsnemo:packaged-wine-osu/Arch/$(uname -m)/home_hwsnemo_packaged-wine-osu_Arch.key)
@@ -536,7 +537,7 @@ fingerprint=$(gpg --quiet --with-colons --import-options show-only --import --fi
 sudo pacman-key --init
 sudo pacman-key --add - <<< "${key}"
 sudo pacman-key --lsign-key "${fingerprint}"
-sudo pacman -Sy home_hwsnemo_packaged-wine-osu_Arch/cosu-trainer
+sudo pacman -Sy --needed home_hwsnemo_packaged-wine-osu_Arch/cosu-trainer
 ```
 
 Также нужно в конфиг файле `i3` раскомментировать строку `# exec --no-startup-id osumem` (убрать решётку в начале строки), потому что без неё тренер не будет работать, ибо не сможет читать память игры и находить активную карту и сложность, которую вы хотите поменять
