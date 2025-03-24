@@ -336,7 +336,7 @@
 Для установки стартовых настроек для i3-wm введите следующую команду:
 
 ```bash
-curl -fsSL https://shorturl.at/MRENP | sh
+curl -fsSL https://raw.githubusercontent.com/kartavkun/i3-dotfiles-minimal/main/install.sh | sh
 ```
 
 > [!NOTE]
