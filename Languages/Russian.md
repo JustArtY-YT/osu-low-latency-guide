@@ -584,7 +584,7 @@ LAUNCH_ARGS=""
 ```
 Вам нужно добавить `gamemode`:
 ```
-LAUNCH_ARGS="gamemode"
+LAUNCH_ARGS="gamemoderun"
 ```
 ## 5.5 zapret (только для жителей России)
 Если вы из России, для Ютуба и Дискорда нужно установить zapret (как и на винде). Как установить и т.д. найдёте в моём репозитории - https://github.com/kartavkun/zapret-discord-youtube
