@@ -340,7 +340,6 @@ curl -fsSL https://raw.githubusercontent.com/kartavkun/i3-dotfiles-minimal/main/
 ```
 
 > [!NOTE]
-> Не переживайте, я сократил ссылку, чтоб не пришлось долго и скрупулёзно писать долгую ссылку для запуска скрипта из Github.
 > Вот репозиторий с настройками - https://github.com/kartavkun/i3-dotfiles-minimal
 
 После того, как вы увидите данное сообщение, перезагрузите конфиг i3 комбинацией клавиш `Win+Shift+R`
