@@ -9,7 +9,7 @@ Scripts, that used in guide:
 
 Languages:
 
-[English](Languages/English.md)
+[English](Languages/English.md) by [Just_ArtY](https://osu.ppy.sh/users/16915136)
 
 [Russian](Languages/Russian.md) by [kartavkun](https://kartavkun.github.io/site/)
 
