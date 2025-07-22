@@ -64,7 +64,8 @@ You Need the `Ventoy` one.
 
 Copy your Arch Linux `.iso` File then after successful copying - restart you PC and boot into your newly made Bootable Flash Drive.
 
-~~О том, как зайти в BIOS и загрузится с флешки, надеюсь, вы знаете, объяснять не надо~~
+I guess, you know how to enter to BIOS and boot to USB Drive
+
 > [!NOTE]
 > The Author of this Guide doesn't want to show, how to boot into Flash Drive and thinks y'all can do that yourself 🥀
 
@@ -76,6 +77,7 @@ When you Load into Ventoy on your Flash Drive, this Window Should Appear:
 Here we Select Arch Linux's `.iso` File
 
 ![](../photos/Pasted%20image%2020250305151338.png)
+
 Select `Normal mode` Installation, if it Fails - Select `grub2 mode`
 
 After loading into ISO you will meet one of these
@@ -107,9 +109,11 @@ in other case you must use your phone's mobile data and use USB-Tethering (aka U
 After you connected to the Internet, run `archinstall`
 
 ![archinstall.png](../photos/archinstall.png)
+
 After Loading in you will meet this menu:
 
 ![menu.png](../photos/menu.png)
+
 ### Step 1.2.1: Mirrors
 We'll Skip First Two Tabs and start with `Mirrors`
 
@@ -128,6 +132,7 @@ In this list select your Country/Region. For ease, press `/` and type your Count
 Should be looking like that (Author's Choice is `Russia`):
 
 ![mirror_result.png](../photos/mirror_result.png)
+
 ### Step 1.2.2: Partitioning
 Now going for `Disk configuration`:
 
@@ -160,26 +165,31 @@ Select `Use compression`
 Should be like this:
 
 ![disk_result.png](../photos/disk_result.png)
+
 ### Step 1.2.3: Disk encryption
 We'll skip `Disk encryption` but it's up to you to do it.
 ### Step 1.2.4: Swap
 Make sure that `swap` is enabled:
 
 ![swap.png](../photos/swap.png)
+
 ### Step 1.2.5: Bootloader
 `Bootloader` must be Grub.
 
 ![bootloader.png](../photos/bootloader.png)
+
 ### Step 1.2.6: Unified kernel images
 Leave `Unified kernel images` on Default (Disabled)
 
 ![UKI.png](../photos/UKI.png)
+
 ### Step 1.2.7: Hostname
 You can leave it on Default or write your own. In Terminal it'll look like this:
 
 `username@hostname $`
 
 ![hostname.png](../photos/hostname.png)
+
 ### Step 1.2.8: Root Password
 You can set any (even `1`) but set strong password
 
@@ -188,6 +198,7 @@ You can set any (even `1`) but set strong password
 Confirm password by repeating it:
 
 ![](../photos/Pasted%20image%2020250304224929.png)
+
 ### 1.2.9 User
 Create user
 
@@ -312,6 +323,7 @@ But if you have your preferences, Select `Yes` and do your things (What are you 
 Then we `reboot`:
 
 ![](../photos/Pasted%20image%2020250304235352.png)
+
 # 2. Boot into newly Installed OS
 ## 2.1 GRUB Bootloade
 We're now inside of GRUB Bootloader. We only have Arch Linux. Select `Arch Linux`
@@ -531,7 +543,7 @@ After the game has Launched, you may exit and from now on Run osu! through App L
 > 
 > If you have Black Screen time to time, turn on compatibility mode.
 > 
-> On Web Browsers (excluding `firefox` and it's forks, i only know `Librewolf`) there's and issue where you cannot always open Beatmap/Skin Files, just opened them through File Explorer.
+> On Web Browsers (excluding `firefox` and it's forks, like Zen Browser and Librewolf) there's and issue where you cannot always open Beatmap/Skin Files, just opened them through File Explorer.
 >
 > There's no more issues that are known that are too critical, but if you find them - create an [Issues](https://github.com/kartavkun/arch-osu-wine/issues) 
 
