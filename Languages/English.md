@@ -366,6 +366,7 @@ You'll see that the taskbar will be moved to the top of the screen and it'll loo
 You may close this white and disgusting terminal with `Win`+`Q` (`Super`+`Q`) (this hotkey used to close currently active windows (focused)). now open new terminal by pressing `Win`+`Enter` (`Super`+`Enter`)
 
 ![](../photos/Pasted%20image%2020250305001947.png)
+
 Now to open our `i3` configuration file we have to type:
 ```bash
 nano .config/i3/config
@@ -399,151 +400,149 @@ To exit `nano` hit `Ctrl`+`X`
 ### Step 2.5.2: Fix tray
 By Default Tray is Disabled, because universal configurations are non existent and if you have multiple monitors then it's pain in the rear end. so we will fix that right now:
 
-
-Сначала нам нужно узнать, к какому выводу относить наш монитор(ы). Пишем команду `xrandr`:
+First off you need to know what Output you Display has. Type `xrandr` and hit `Enter`:
 
 ![](../photos/Pasted%20image%2020250305103420.png)
 
-Для этого я решил уже зайти не с виртуалки, и как вы видите, тут у меня несколько мониторов. Тут мы видим доступные разрешения дисплеев для каждого монитора и доступная для них герцовка. В моём случае это `HDMI-A-0`.
+To showcase it ~~i~~ Author tested `xrandr` on non Virtual Machine and as you can see Author has multiple Displays. Here you can also see all available Resolutions and Hz for them. in Author's case it's `HDMI-A-0`.
 
-Затем заходим в наш конфиг файл и находим строку `# set $tray {your preferred output}`. Её надо раскомментировать (убрать решётку в начале строки) и заменить `{your preferred output}` на маркировку вашего вывода. В моём случае это `HDMI-A-0`
+now you go back to your configuration file and find line `# set $tray {your preferred output}` you need to uncomment this like (remove `#` at the start of the line) and change `{your preferred output}` to your Displays' mark. in Author's case it's `HDMI-A-0`
 
 ![](../photos/Pasted%20image%2020250305103918.png)
 
-Сохраняем файл и перезагружаем конфиг. И теперь в правом верхнем углу у нас появился трей:
+Save and Reload configuration. `Win`+`Shift`+`R` (`Super`+`Shift`+`R`) then tray should appear in top-right corner.
 
 ![](../photos/Pasted%20image%2020250305104029.png)
 
-### 2.5.3 Настройка расположения мониторов
+### Step 2.5.3: Display order settings
 > [!NOTE]
->Если у вас один монитор или то, как у вас по умолчанию работают мониторы, можно этот пункт скипнуть.
->Также если у вас карта от Nvidia, вам нужно установить `nvidia-settings` командой `sudo pacman -S nvidia-settings`, открыть через терминал с `sudo`, т.е. `sudo nvidia-settings`. О том, как это настройть, сделайте кто-нибудь, я православный АМДшник :D
+> If you only have one Display and Default settings work fine for you, you can skip this step
+> Also if you use NVIDIA Graphics you need to install `nvidia-settings` (`sudo pacman -S nvidia-settings`) now open Terminal as superuser (`sudo` i.e `sudo nvidia-settings`). You can find how to set up NVIDIA settings yourself because Author uses AMD. :P
 
-Вновь обращаемся к `xrandr`.
+Once again `xrandr`.
 
-У меня три монитора, один из которых находиться справа от основного, и также повёрнут вертикально, а другой ниже основного.
+Author has 3 Displays One of which is to the left of Primary Display and in Portrait Mode and Second is below Primary One
 
-Чтоб настроить как мне надо, мне надо ввести следующие команды:
-`xrandr --output {монитор}(в моём случае HDMI-A-1) --right-of {монитор}(справа от) --rotate {left/right(пробуйте один из этих вариантов, если монитор расположен вертикально, чтоб найти правильное расположение)}`
-`xrandr --output {другой монитор}(в моём случае DVI-D-0) --below {монитор}(под)`
+To set it like i need i will enter these lines:
+`xrandr --output {Display1} --right-of {Display1} --rotate {left/right(try one of these to find the right rotation for your Display)}`
+`xrandr --output {Display2} --below {Display0}`
 
-Для дополнения ещё напишу команду для основного монитора:
-`xrandr --output {монитор}(основной) --primary(сделать монитор основным) --rate {герцовка}(на случай, если герцовка неправильно стоит. В списке мониторов активная герцовка обозначается звёздочкой)`
+As an addition here's line to make a Display Primary:
+`xrandr --output {Display} --primary --rate {Refresh rate (Hz)}(In Case the Refresh rate in set incorrectly you can see active refresh rate from list Displayed with Asterisk (*))`
 
-Чтоб не запутаться во флагах, вот список, который нам нужен:
+Here's list of flags so you don't get confused:
 
 ![](../photos/Pasted%20image%2020250305105255.png)
 
-Теперь мы добавим эти команды в конфигурационный файл. Заходим и находим нужные строки:
+Now we'll enter those commands to configuration file. Open Configration file and enter needed lines:
 
 ![](../photos/Pasted%20image%2020250305105949.png)
 
-Здесь мы раскомментируем строку `exec_always --no-startup-id xrandr {settings}` и меняем `{settings}` на нужные настройки. Если их несколько, то пишем следующие строки, которые будут начинаться с `exec_always --no-startup-id xrandr {ваши настройки}`.
+Here we'll uncomment line `exec_always --no-startup-id xrandr {settings}` and change `{settings}` to your configurations. if you have multiple, then add new lines that will look like  this `exec_always --no-startup-id xrandr {settings}`.
 
-В моём случае получилось вот так:
+In my case it look like this:
 
 ![](../photos/Pasted%20image%2020250305110351.png)
 
-Сохраняем файл и перезагружаем конфиг. 
+Save and Reload Configuration File. `Win`+`Shift`+`R` (`Super`+`Shift`+`R`)
 
-### 2.5.4 Установка обоев
-Если вы хотите вместо чёрного экрана какие-нибудь обои, то для этого вам нужно установить программу `feh` 
+### Step 2.5.4: Setting up Wallpaper
+If you want something instead of black screen. you can install `feh`
 ```bash
 sudo pacman -S feh
 ```
-Затем скачать предпочтительные обои в нужном месте. Желательно, чтоб вы их сразу не удалили. Например я установлю такие обои:
+
+Then download preferred wallpapers in your directory and don't delete them right away. for example i will use these wallpapers:
 
 ![](../photos/black-white.jpg)
 
-Используйте файловый менеджер `nemo`, который мы устанавливали до этого. Можете создать отдельную директорию, чтоб случайно из загрузок её не удалить:
+Use `nemo` File Explorer, that we installed earlier. You can create separate directory to not accidentally delete it from downloads:
 
 ![](../photos/Pasted%20image%2020250305111414.png)
 
-Теперь просто выделяем нашу картинку и копируем её.
+Now we'll Copy our Wallpapers
 
-Затем заходим в файл конфигурации и находим строку `#exec_always --no-startup-id feh --bg-scale ...` , раскомментируем и удаляем `{set path to your background image}`, и вставляем путь к нашей картинке (ЧТОБ ВСТАВИТЬ НАЖИМАЕМ НЕ ПРОСТО Ctrl+V, А ДОБАВЛЯЕМ Shift, т.е. Ctrl+Shift+V)
+Go to configuration file and fine line `#exec_always --no-startup-id feh --bg-scale ...` uncomment and delete `{set path to your background image}` and paste Path to your Wallpapers (TO PASTE YOU HAVE TO PRESS `Ctrl`+`Shift`+`V`, not regular `Ctrl`+`V`!!!)
 
-Должно получиться примерно вот так:
+Should look like this:
 
 ![](../photos/Pasted%20image%2020250305111816.png)
 
-Затем сохраняем файл и перезагружаем конфиг.
+Save and Reload Configuration File `Win`+`Shift`+`R` (`Super`+`Shift`+`R`)
 
-Как вы можете видеть, всё заработало
+As you can see everything works well
 
 ![](../photos/Pasted%20image%2020250305111906.png)
-## 2.6 Горячие клавиши
-Шпаргалка для новичков i3-wm:
+## Step 2.6: Hotkeys
+Crib note for `i3` beginners:
 
-> Win+Enter - Запуск терминала
+> `Win`+`Enter` - Open Terminal
 > 
-> Win+R - Запуск лаунчера приложений
+> `Win`+`R` - Open App Launcher
 > 
-> Win+Q - Закрыть активное окно
+> `Win`+`Q`- Close Currently Focused Window
 
 
-> Win+ЛКМ - Изменение положения активного окна
+> `Win`+`LMB` - Change the Position of an Active Window
 > 
-> Win+ПКМ - Изменение размеров активного окна
+> `Win`+`RMB` - Change the Size of an Active Window
 > 
-> Win+Shift+Space - Сделать активное окно в виде "окна" и обратно
+> `Win`+`Shift`+`Space` - Switch between Windowed and Fullscreen on an Active Window
 >
-> Win+1, 2, 3 ... 0 - Переход на рабочий стол 1, 2, 3 ... 10
+> `Win`+`1`, `2`, `3`, ..., `0` - Switch between Desktop `1`, `2`, `3`, ..., `0`
 > 
-> Win+Shift+1, 2, 3 ... 0 - Перенос активного окна на рабочий стол 1, 2, 3 ... 10
+> `Win`+`Shift`+`1`, `2`, `3`, ..., `0` - Move your Active Window to Desktop `1`, `2`, `3`, ..., `0`
 >
-> Ctrl+Win+Right - Переход на следующий рабочий стол
+> `Ctrl`+`Win`+`Right` - Switch to Next Desktop
 > 
-> Ctrl+Win+Left - Переход на предыдущий рабочий стол
+> `Ctrl`+`Win`+`Left` - Switch to Previous Desktop
 
 
-> Win+Shift+R - Перезагрузка конфига (для изменений в конфигурационном файле)
+> `Win`+`Shift`+`R` (`Super`+`Shift`+`R`) - Reload `i3` Configuration (if you're editing Configuration File)
 
-# 3 Установка osu!stable
-Вы можете открыть браузер, чтоб скопировать ссылку для запуска скрипта, который установит игру, вместе с драйверами и другими зависимостями. В терминал нужно вписать следующую команду:
+# Step 3: Downloading and Installing osu!stable
+You can open your Web Browser and copy link to run script which will install osu! with Drivers and Other Dependencies. Paste following command in Terminal:
 ```bash
 curl -fsSL https://raw.githubusercontent.com/kartavkun/arch-osu-wine/main/setup.sh | sh
 ```
-
-Установка пройдёт полностью автоматически. Если вас просят ввести пароль, вводите и ждите конца установки, пока не появится данное сообщение:
+Installing will be fully done automatically. if you get promted to enter your Password, wait for Installation to Finish until you'll see this message:
 
 ![](../photos/Pasted%20image%2020250305112824.png)
 
-Помимо самой игры будут установлены OpenTabletDriver, настройки звука с меньшей задержкой, файлы для работы Wootility, Drunkdeer-Antler и веб-драйвера Sayo-device'а. Настроить можно только через браузер на базе Chromium (Проще говоря кроме Firefox, Zen Browser и других)
+With the game there will be Installed `OpenTabletDriver`, Sound Setting with lowest Delay, `Wootility` compatibility files, `Drunkdeer-Antler` and `SayoDevice`'s Web Drivers. ⚠CAN ONLY CONFIGURE ON `Chromium` BASED WEB BROSER⚠ -> [list of browsers from wiki](https://en.wikipedia.org/wiki/Chromium_(web_browser)#Browsers_based_on_Chromium)
 
 > [!NOTE]
-> Если у вас есть другой девайс с настройкой РТ через браузер, можете написать в [Issues](https://github.com/kartavkun/arch-osu-wine/issues), я помогу и так же добавлю в репозиторий
+> If you have other Device with Rapid Trigger settings in Web Browser - create an [Issues](https://github.com/kartavkun/arch-osu-wine/issues) i will assist you and add it to Repository
 
-Готово!
+All done!
 
-# 4 Запуск osu!stable
-Для запуска osu!, пропишите в терминале команду для корректного первого запуска:
+# Step 4: Launching osu!stable
+To Launch osu!, Run a command in your Terming for correct first start-up:
 ```
 .local/bin/osu
 ```
-После того как у вас запуститься игра, можете выходить и отныне запускать игру через лаунчер приложений. 
+After the game has Launched, you may exit and from now on Run osu! through App Launcher.
 
-## 4.1 Решение проблем
+## Step 4.1: Fixes
 > [!NOTE]
-> Если нет звука или он "пердит", то как это решить есть здесь: https://github.com/kartavkun/arch-osu-wine?tab=readme-ov-file#troubleshooting .
+> If you have no Audio or it Stutters - Find your Solution [Here](https://github.com/kartavkun/arch-osu-wine?tab=readme-ov-file#troubleshooting).
 > 
-> Если не работает OpenTabletDriver, то надо перезагрузить систему, чтоб точно всё заработало (кнопка справа сверху).
+> If OpenTabletDriver doesn't work, Simply `reboot`, should be working fine (Button on the top-right corner).
 > 
-> Если у вас чёрный экран через время, то включите режим совместимости
+> If you have Black Screen time to time, turn on compatibility mode.
 > 
-> На браузерах, кроме Фаерфокса и его форках (Шарю только за Librewolf) есть проблема, что через браузер открыть файлы для карт и скинов не всегда получается, так что открывать их надо через файловый менеджер.
+> On Web Browsers (excluding `firefox` and it's forks, i only know `Librewolf`) there's and issue where you cannot always open Beatmap/Skin Files, just opened them through File Explorer.
 >
-> Остальные проблемы пока не знаю, ибо не встречал прям критичных. 
-> Обо всём напишу позже.
+> There's no more issues that are known that are too critical, but if you find them - create an [Issues](https://github.com/kartavkun/arch-osu-wine/issues) 
 
-# 5 Дополнения
-## 5.1 Discord
-Если вы хотите использовать Дискорд для трансляций со звуком, используйте [Vesktop](https://github.com/Vencord/Vesktop) как клиент с Венкорд, лучше поддерживается на Линукс, чем официальный клиент:
+# Step 5: Additions
+## Step 5.1: Discord
+if you want to use Discord to Screen Share with Sound -> ~~Use [Vesktop](https://github.com/Vencord/Vesktop)~~ Just Download Discord 
 ```bash
-yay -S vesktop-bin
+sudo pacman -S discord
 ```
-## 5.2 osu! trainer
-Если нужно установить osu тренер (для создания дифф с ускорением, сменой AR, OD, CS, HP), надо написать следующее:
+## Step 5.2: osu! trainer
+If you need osu! trainer to create practice difficulties with custom rate changes, AR, OD, CS and HP - Type this in your Terminal:
 ```
 echo "[home_hwsnemo_packaged-wine-osu_Arch]
 Server = https://download.opensuse.org/repositories/home:/hwsnemo:/packaged-wine-osu/Arch/\$arch" | sudo tee -a /etc/pacman.conf
@@ -557,20 +556,20 @@ sudo pacman-key --lsign-key "${fingerprint}"
 sudo pacman -Sy --needed home_hwsnemo_packaged-wine-osu_Arch/cosu-trainer
 ```
 
-Также нужно в конфиг файле `i3` раскомментировать строку `# exec --no-startup-id osumem` (убрать решётку в начале строки), потому что без неё тренер не будет работать, ибо не сможет читать память игры и находить активную карту и сложность, которую вы хотите поменять
-## 5.3 osu!lazer
+Also you need to uncomment line in `i3` Configuration File `# exec --no-startup-id osumem` (remove `#` at the beginning) because if you don't - osu! trainer will not work, it just won't be able to read osu!'s memory, read Now Playing Beatmap and Difficulty that you want to Practice.
+## Step 5.3: osu!lazer
 ```bash
 yay -S osu-lazer-bin
 ```
 
-## 5.4 gamemode
-Данная программа может улучшить производительность игры.\
+## Step 5.4: gamemode
+This program increases performance in games 😄
 
-Для этого установите сам gamemode:
+To Install gamemode run this in your Terminal:
 ```
 sudo pacman -S gamemode
 ```
-Затем просто скопируйте и вставьте данное полотно в теминал:
+Then copy and paste this sheet in your Terminal:
 ```
 mkdir -p ~/.config/gamemode
 echo "[general]
@@ -585,15 +584,15 @@ nv_powermizer_mode=1
 
 amd_performance_level=high" | tee -a ~/.config/gamemode/gamemode.ini
 ```
-После чего откройте файл для запуска игры, например через `nano`:
+Then open file for Launching game for example with `nano`:
 ```
 nano ~/.local/bin/osu
 ```
-Там вы найдёте следующую строчку:
+Here you will find this line:
 ```
 LAUNCH_ARGS=""
 ```
-Вам нужно добавить `gamemode`:
+Here we'll add `gamemoderun`:
 ```
 LAUNCH_ARGS="gamemoderun"
 ```
