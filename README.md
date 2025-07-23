@@ -13,7 +13,7 @@ Languages:
 
 [Russian](Languages/Russian.md) by [kartavkun](https://kartavkun.github.io/site/)
 
-Ukranian by ???
+[Ukranian](Languages/Ukrainian.md) by [RafGPio](https://rafgp.io)
 
 German by ???
 
