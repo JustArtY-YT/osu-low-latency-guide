@@ -11,15 +11,15 @@ Languages:
 
 [English](Languages/English.md) by [Just_ArtY](https://osu.ppy.sh/users/16915136)
 
-[Russian](Languages/Russian.md) by [kartavkun](https://kartavkun.github.io/site/)
+[Русский](Languages/Russian.md) by [kartavkun](https://kartavkun.github.io/site/)
 
-[Ukranian](Languages/Ukrainian.md) by [RafGPio](https://rafgp.io)
+[Українська](Languages/Ukrainian.md) by [RafGPio](https://rafgp.io)
 
-German by ???
+Deutsch by ???
 
-French by ???
+Français by ???
 
-Spanish by ???
+Español by ???
 
 > [!NOTE]
 > If you're a translator, you allowed to self-promote :D
